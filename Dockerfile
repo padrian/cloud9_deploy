@@ -1,5 +1,5 @@
 FROM node:alpine
-COPY c9sdk /var/www/html
-WORKDIR /var/www/html/c9sdk
+ADD c9sdk/. ./app
+WORKDIR ./app
 RUN scripts/install-sdk.sh
 CMD [ "node", "server.js" ]
